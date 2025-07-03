@@ -2,6 +2,7 @@ import random
 import string
 import json
 
+# Incluir outros estilos de senhas
 def gerar_senha(tamanho, caracteres):
     return ''.join(random.choices(caracteres, k=tamanho))
 
@@ -16,6 +17,7 @@ def solicitar_tamanho():
         except ValueError:
             print("Por favor, digite um número válido.")
 
+# Melhorar a visualização 
 def exibir_menu():
     print('''
 ----MENU----
@@ -35,6 +37,7 @@ def exibir_menu():
         except ValueError:
             print("Por favor, digite um número válido.")
 
+# Mudar a forma de escolha
 def escolha_caracteres(escolha):
     if escolha == 1:
         return string.digits
