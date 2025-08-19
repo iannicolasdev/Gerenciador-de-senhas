@@ -2,7 +2,12 @@
 
 *O projeto ainda está em andamento*
 
-## Lista de atualizações:
+## ⚠️ Atualizações:
+
+- O projeto agora utilizará uma nova forma de armazenamento de senhas.
+- Inicio da conexão e criação do novo banco de dados.
+
+## Lista de futuras atualizações:
 
 - O projeto foi iniciado novamente, utilizando algumas partes do código do protótipo.
 - O projeto conta com uma forma incial e simples de armazenar as senhas.
