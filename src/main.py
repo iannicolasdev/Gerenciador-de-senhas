@@ -22,6 +22,13 @@ CREATE TABLE IF NOT EXISTS passwords (
 )
 """)
 
+cursor.execute("""
+INSERT INTO passwords (service, username, password) 
+VALUES ('GitHub', 'ian', '12345678');
+""")
+
+conn.commit()
+
 # if os.path.exists("data/password.json"):
 #     try:
 #         with open("data/password.json", "r") as file:
