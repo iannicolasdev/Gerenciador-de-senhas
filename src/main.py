@@ -41,12 +41,15 @@ def add_password(conn, service, username, password):
     """, (service, username, password))
     conn.commit()
 
+def main():
+    # Inicio do SQLite / Conexão com o banco de dados
+    conn = sqlite3.connect("data/passwords.db")
 
-# Inicio do SQLite / Conexão com o banco de dados
-conn = sqlite3.connect("data/passwords.db")
+    length, username, service = get_inputs()
+    password = generate_password(length)
+    add_password(conn, service, username, password)
 
-length, username, service = get_inputs()
-password = generate_password(length)
-add_password(conn, service, username, password)
+    conn.close()
 
-conn.close()
+if __name__ == "__main__":
+    main()
