@@ -1,1 +1,6 @@
-data/
+# Banco de dados
+data/passwords.db
+
+# Byte-compiled / cache files
+__pycache__/
+*.pyc
