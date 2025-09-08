@@ -8,3 +8,8 @@ def generate_password(length):
     # Geração de senha aleatória
     password = (''.join(random.choices(caracteres, k=length)))
     return password
+
+def manual_password():
+    # Inserção de senha manualmente pelo usuário
+    password = str(input("Digite sua senha: "))
+    return password
