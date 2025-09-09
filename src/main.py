@@ -9,8 +9,10 @@ def main():
 
     create_table(conn)
 
-    length, username, service = get_inputs()
-    password = generate_password(length)
+    username, service = get_inputs()
+
+    password = choose_password_method()
+
     add_password(conn, service, username, password)
 
     conn.close()
