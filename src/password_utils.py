@@ -23,13 +23,13 @@ def choose_password_method():
         --------------------------
         """)
 
-        decisao = int(input("Digite sua escolha: "))
+        choice = int(input("Digite sua escolha: "))
 
-        if decisao == 1:
+        if choice == 1:
             password = manual_password()
             return password
             
-        elif decisao == 2:
+        elif choice == 2:
             length = int(input("Qual o tamanho da senhas?: "))
             password = generate_password(length)
             return password
