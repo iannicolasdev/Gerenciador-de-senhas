@@ -1,3 +1,5 @@
+# import sqlite3
+
 def create_table(conn):
     cursor = conn.cursor() 
 
@@ -21,3 +23,14 @@ def add_password(conn, service, username, password):
     VALUES (?, ?, ?);
     """, (service, username, password))
     conn.commit()
+
+def view_passwords(conn):
+    cursor = conn.cursor()
+
+    cursor.execute("""
+    SELECT * FROM passwords 
+    """)
+
+    resultado = cursor.fetchall()
+
+    return resultado

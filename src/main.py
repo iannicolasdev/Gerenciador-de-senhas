@@ -15,6 +15,11 @@ def main():
 
     add_password(conn, service, username, password)
 
+    resultado = view_passwords(conn)
+
+    for linha in resultado:
+        print(linha)
+
     conn.close()
 
 if __name__ == "__main__":
