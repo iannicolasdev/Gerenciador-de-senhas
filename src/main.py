@@ -17,8 +17,13 @@ def main():
 
     resultado = view_passwords(conn)
 
+    print(f"| {'ID':>3} | {'Service':<20} | {'User':<20} | {'Password':<20} |")
+    print("-" * 76)
+
     for linha in resultado:
-        print(linha)
+        id_, service, user, password = linha
+
+        print(f"| {id_:>3} | {service:<20} | {user:<20} | {password:<20} |")
 
     conn.close()
 
