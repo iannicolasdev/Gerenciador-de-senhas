@@ -1,6 +1,9 @@
 # Banco de dados
-data/passwords.db
+data/
 
 # Byte-compiled / cache files
 __pycache__/
 *.pyc
+
+# Vscode
+.vscode/
