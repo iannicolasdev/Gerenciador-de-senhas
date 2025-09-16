@@ -1,9 +1,10 @@
+# Entrada de dados do usuário
 def get_inputs():
-    # Entrada de dados do usuário
     username = str(input("Qual o seu nome?: "))
     service = str(input("Qual o serviço da senha?: "))
     return username, service
 
+# Exibição formatada da tabela no terminal
 def list_table(resultado):
     print(f"| {'ID':>3} | {'Service':<20} | {'User':<20} | {'Password':<20} |")
     print("-" * 76)

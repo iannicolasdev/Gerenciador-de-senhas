@@ -1,4 +1,4 @@
-# import sqlite3
+import sqlite3
 
 def create_table(conn):
     cursor = conn.cursor() 
@@ -26,7 +26,7 @@ def add_password(conn, service, username, password):
 
 def view_passwords(conn):
     cursor = conn.cursor()
-
+    # Comando SELECT para visualizar os dados na tabela
     cursor.execute("""
     SELECT * FROM passwords 
     """)

@@ -14,6 +14,7 @@ def manual_password():
     password = str(input("Digite sua senha: "))
     return password
 
+# Função para escolher o método de adicionar a senha
 def choose_password_method():
     while True:
         print("""
