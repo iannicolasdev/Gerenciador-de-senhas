@@ -17,15 +17,16 @@ def main():
     password = choose_password_method()
 
     # Adiciona os dados na tabela
-    add_password(conn, service, username, password)
+    add_password(conn, service, username, password) # --ADICIONA--
 
     # Armazena os dados após o SELECT na tabela
     resultado = view_passwords(conn)
 
     # Exibe os dados da tabela no terminal
-    list_table(resultado)
+    list_table(resultado) # --VISUALIZA--
 
-    update_password(conn)
+    # Teste com update
+    update_password(conn) # --ATUALIZA--
 
     conn.close()
 

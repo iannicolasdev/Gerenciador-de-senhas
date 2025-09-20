@@ -1,4 +1,5 @@
 import sqlite3
+from cli import get_update_inputs
 
 def create_table(conn):
     cursor = conn.cursor() 
@@ -39,9 +40,7 @@ def view_passwords(conn):
 def update_password(conn):
     cursor = conn.cursor()
 
-    id_ = int(input("Informe o ID da senha que quer atualizar: "))
-
-    new_password = str(input("Digite a nova senha: "))
+    id_, new_password = get_update_inputs("da senha", "a nova senha")
 
     cursor.execute("""
     UPDATE passwords

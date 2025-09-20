@@ -13,3 +13,11 @@ def list_table(resultado):
         id_, service, user, password = linha
 
         print(f"| {id_:>3} | {service:<20} | {user:<20} | {password:<20} |")
+
+# Interação para receber as novas alterações
+def get_update_inputs(text_id, text):
+    id_ = int(input(f"Informe o ID {text_id} que quer atualizar: "))
+
+    change = str(input(f"Digite {text}: "))
+
+    return id_, change
