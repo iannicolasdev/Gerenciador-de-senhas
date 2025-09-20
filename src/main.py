@@ -26,7 +26,9 @@ def main():
     list_table(resultado) # --VISUALIZA--
 
     # Teste com update
-    update_password(conn) # --ATUALIZA--
+    update_password(conn) # --ATUALIZA SENHA--
+
+    update_service(conn) # --ATUALIZA SERVIÇO--
 
     conn.close()
 

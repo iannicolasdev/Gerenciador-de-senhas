@@ -36,6 +36,20 @@ def view_passwords(conn):
 
     return resultado
 
+# Função de atualização do serviço 
+def update_service(conn):
+    cursor = conn.cursor()
+
+    id_, new_service = get_update_inputs("do serviço", "o novo serviço")
+
+    cursor.execute("""
+    UPDATE passwords
+    SET service = ?
+    WHERE id = ?    
+    """, (new_service, id_))
+
+    conn.commit()
+
 # Função de atualização da senha
 def update_password(conn):
     cursor = conn.cursor()
