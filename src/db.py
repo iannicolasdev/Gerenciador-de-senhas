@@ -34,3 +34,19 @@ def view_passwords(conn):
     resultado = cursor.fetchall()
 
     return resultado
+
+# Função de atualização da senha
+def update_password(conn):
+    cursor = conn.cursor()
+
+    id_ = int(input("Informe o ID da senha que quer atualizar: "))
+
+    new_password = str(input("Digite a nova senha: "))
+
+    cursor.execute("""
+    UPDATE passwords
+    SET password = ?
+    WHERE id = ?
+    """, (new_password, id_))
+    
+    conn.commit()

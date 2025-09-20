@@ -25,6 +25,8 @@ def main():
     # Exibe os dados da tabela no terminal
     list_table(resultado)
 
+    update_password(conn)
+
     conn.close()
 
 if __name__ == "__main__":
