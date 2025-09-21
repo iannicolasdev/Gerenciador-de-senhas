@@ -30,6 +30,8 @@ def main():
 
     update_service(conn) # --ATUALIZA SERVIÇO--
 
+    update_user(conn) # --ATUALIZA USER--
+
     conn.close()
 
 if __name__ == "__main__":

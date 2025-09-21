@@ -50,6 +50,20 @@ def update_service(conn):
 
     conn.commit()
 
+# Função de atualização do user
+def update_user(conn):
+    cursor = conn.cursor()
+
+    id_, new_user = get_update_inputs("do user", "o novo user")
+
+    cursor.execute("""
+    UPDATE passwords
+    SET username = ?
+    WHERE id = ?
+    """, (new_user, id_))
+
+    conn.commit()
+
 # Função de atualização da senha
 def update_password(conn):
     cursor = conn.cursor()
