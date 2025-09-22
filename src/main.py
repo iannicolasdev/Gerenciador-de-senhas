@@ -11,26 +11,24 @@ def main():
     create_table(conn)
 
     # Recebe os dados de usuário e serviço da senha
-    username, service = get_inputs()
+    # username, service = get_inputs()
 
-    # Recebe o dado da senha
-    password = choose_password_method()
+    # # Recebe o dado da senha
+    # password = choose_password_method()
 
-    # Adiciona os dados na tabela
-    add_password(conn, service, username, password) # --ADICIONA--
+    # # Adiciona os dados na tabela
+    # add_password(conn, service, username, password) 
 
     # Armazena os dados após o SELECT na tabela
     resultado = view_passwords(conn)
 
     # Exibe os dados da tabela no terminal
-    list_table(resultado) # --VISUALIZA--
+    list_table(resultado) 
 
-    # Teste com update
-    update_password(conn) # --ATUALIZA SENHA--
+    # Executa de forma dinâmica quais alterações o user deseja
+    choose_password_update(conn)
 
-    update_service(conn) # --ATUALIZA SERVIÇO--
-
-    update_user(conn) # --ATUALIZA USER--
+    list_table(resultado) 
 
     conn.close()
 
