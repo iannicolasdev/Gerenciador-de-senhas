@@ -2,6 +2,7 @@ import sqlite3
 from cli import *
 from password_utils import *
 from db import *
+from menu import *
 
 def main():
     # Inicio do SQLite / Conexão com o banco de dados
@@ -11,13 +12,13 @@ def main():
     create_table(conn)
 
     # Recebe os dados de usuário e serviço da senha
-    # username, service = get_inputs()
+    username, service = get_inputs()
 
-    # # Recebe o dado da senha
-    # password = choose_password_method()
+    # Recebe o dado da senha
+    password = choose_password_method()
 
-    # # Adiciona os dados na tabela
-    # add_password(conn, service, username, password) 
+    # Adiciona os dados na tabela
+    add_password(conn, service, username, password) 
 
     # Armazena os dados após o SELECT na tabela
     resultado = view_passwords(conn)
@@ -27,8 +28,6 @@ def main():
 
     # Executa de forma dinâmica quais alterações o user deseja
     choose_password_update(conn)
-
-    list_table(resultado) 
 
     conn.close()
 
