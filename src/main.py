@@ -29,6 +29,8 @@ def main():
     # Executa de forma dinâmica quais alterações o user deseja
     choose_password_update(conn)
 
+    delete_password(conn)
+
     conn.close()
 
 if __name__ == "__main__":

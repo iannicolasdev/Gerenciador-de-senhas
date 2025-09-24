@@ -77,3 +77,15 @@ def update_password(conn):
     """, (new_password, id_))
     
     conn.commit()
+
+def delete_password(conn):
+    cursor = conn.cursor()
+
+    delete_id = int(input("Informe o ID da linha que quer excluir: "))
+
+    cursor.execute("""
+    DELETE FROM passwords
+    WHERE id = ?
+    """, (delete_id,))
+
+    conn.commit()
