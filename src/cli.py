@@ -21,3 +21,8 @@ def get_update_inputs(text_id, text):
     change = str(input(f"Digite {text}: "))
 
     return id_, change
+
+def get_delete_inputs():
+    delete_id = int(input("Informe o ID da linha que quer excluir: "))
+
+    return delete_id

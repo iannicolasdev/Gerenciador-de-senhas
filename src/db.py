@@ -1,5 +1,5 @@
 import sqlite3
-from cli import get_update_inputs
+from cli import get_update_inputs, get_delete_inputs
 
 def create_table(conn):
     cursor = conn.cursor() 
@@ -81,7 +81,7 @@ def update_password(conn):
 def delete_password(conn):
     cursor = conn.cursor()
 
-    delete_id = int(input("Informe o ID da linha que quer excluir: "))
+    delete_id = get_delete_inputs()
 
     cursor.execute("""
     DELETE FROM passwords
