@@ -11,5 +11,5 @@ def generate_password(length):
 
 def manual_password():
     # Inserção de senha manualmente pelo usuário
-    password = str(input("Digite sua senha: "))
+    password = str(input("Informe sua senha: "))
     return password

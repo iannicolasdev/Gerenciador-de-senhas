@@ -11,14 +11,14 @@ def choose_password_method():
         --------------------------
         """)
 
-        choice = int(input("Digite sua escolha: "))
+        choice = int(input("Informe sua escolha: "))
 
         if choice == 1:
             password = manual_password()
             return password
             
         elif choice == 2:
-            length = int(input("Qual o tamanho da senhas?: "))
+            length = int(input("Informe o tamanho da senhas: "))
             password = generate_password(length)
             return password
 
@@ -43,7 +43,7 @@ def choose_password_update(conn):
     }
 
     while True:
-        choose = int(input("Digite sua escolha: "))
+        choose = int(input("Informe sua escolha: "))
 
         func = options.get(choose)
         if func:

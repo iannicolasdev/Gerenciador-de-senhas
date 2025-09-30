@@ -1,7 +1,7 @@
 # Entrada de dados do usuário
 def get_inputs():
-    username = str(input("Qual o seu nome?: "))
-    service = str(input("Qual o serviço da senha?: "))
+    username = str(input("Informe o username: "))
+    service = str(input("Informe o serviço da senha: "))
     return username, service
 
 # Exibição formatada da tabela no terminal
@@ -18,7 +18,7 @@ def list_table(resultado):
 def get_update_inputs(text_id, text):
     id_ = int(input(f"Informe o ID {text_id} que quer atualizar: "))
 
-    change = str(input(f"Digite {text}: "))
+    change = str(input(f"Informe {text}: "))
 
     return id_, change
 
