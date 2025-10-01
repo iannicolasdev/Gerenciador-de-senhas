@@ -2,7 +2,17 @@
 def get_inputs():
     username = str(input("Informe o username: "))
     service = str(input("Informe o serviço da senha: "))
-    return username, service
+
+    if username == "":
+        print("Erro: O username não pode estar vazio")
+        return None, None
+
+    elif service == "":
+        print("Erro: O serviço não pode estar vazio")
+        return None, None
+
+    else:
+        return username, service
 
 # Exibição formatada da tabela no terminal
 def list_table(resultado):
