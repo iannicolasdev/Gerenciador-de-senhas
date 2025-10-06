@@ -11,25 +11,37 @@ def main():
     # Cria a tabela 
     create_table(conn)
 
-    # Recebe os dados de usuário e serviço da senha
-    username, service = get_inputs()
+    print("""
+    ---------Comandos---------
+    1 - Adicionar 
+    2 - Visualizar
+    3 - Atualizar
+    4 - Excluir
+    """)
 
-    # Recebe o dado da senha
-    password = choose_password_method()
+    command = int(input("Insira sua escolha: "))
+    print("\n")
 
-    # Adiciona os dados na tabela
-    add_password(conn, service, username, password) 
+    if command == 1:
+        username, service = get_inputs()
 
-    # Armazena os dados após o SELECT na tabela
-    resultado = view_passwords(conn)
+        password = choose_password_method()
 
-    # Exibe os dados da tabela no terminal
-    list_table(resultado) 
+        add_password(conn, service, username, password)
 
-    # Executa de forma dinâmica quais alterações o user deseja
-    choose_password_update(conn)
+    elif command == 2:
+        resultado = view_passwords(conn) 
 
-    delete_password(conn)
+        list_table(resultado)
+
+    elif command == 3:
+        choose_password_update(conn)
+
+    elif command == 4:
+        delete_password(conn)
+
+    else:
+        print("Erro: Comando inválido")
 
     conn.close()
 
