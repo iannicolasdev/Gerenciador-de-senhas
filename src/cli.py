@@ -1,19 +1,20 @@
+from password_utils import validate_inputs
+
 # Entrada de dados do usuário
 def get_inputs():
-    username = str(input("Informe o username: "))
 
-    if username == "":
-        print("Erro: O username não pode estar vazio")
-        return None, None
-    
-    service = str(input("Informe o serviço da senha: "))
+    while True:
+        try:
+            username = str(input("Informe o username: "))
+            validate_username = validate_inputs("username", username)
 
-    if service == "":
-        print("Erro: O serviço não pode estar vazio")
-        return None, None
+            service = str(input("Informe o serviço da senha: "))
+            validate_service = validate_inputs("serviço", service)
 
-    else:
-        return username, service
+            return validate_username, validate_service
+        
+        except ValueError as e:
+            print(f"Erro: {e}\nTente novamente!")
 
 # Exibição formatada da tabela no terminal
 def list_table(resultado):
@@ -47,6 +48,7 @@ def get_delete_inputs():
 
     if delete_id == "":
         print("Erro: O ID não foi informado")
+        return None
 
     else:
         return delete_id

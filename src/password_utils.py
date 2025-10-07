@@ -13,3 +13,10 @@ def manual_password():
     # Inserção de senha manualmente pelo usuário
     password = str(input("Informe sua senha: "))
     return password
+
+def validate_inputs(campo, valor):
+
+    if not valor or valor.strip() == "":
+        raise ValueError(f"O campo '{campo}' não pode estar vazio.")
+    
+    return valor.strip()
