@@ -43,14 +43,15 @@ def choose_password_update(conn):
     }
 
     while True:
-        choose = int(input("Informe sua escolha: "))
+        try:
+            choose = int(input("Informe sua escolha: "))
 
-        func = options.get(choose)
-        if func:
-            func(conn)
+            func = options.get(choose)
+            if func:
+                func(conn)
 
-        elif choose == 0:
-            break
-
-        else:
-            print("Opção inválida!")
+            elif choose == 0:
+                break
+        
+        except ValueError:
+            print("Erro: Digite um valor válido")
